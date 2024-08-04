@@ -8,7 +8,7 @@ app.use(cors({
 
 
 app.get('/test', (req,res)=>{
-    res.json('test ok');
+    res.json('test okay successful');
 });
 
 app.listen(4000);

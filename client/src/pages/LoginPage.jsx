@@ -6,8 +6,8 @@ export default function LoginPage(){
             <div className="mb-32">
             <h1 className="text-4xl text-center mb-4">Login</h1>
             <form action="" className="max-w-md mx-auto">
-                <input type="email" name="" id="" placeholder="your@email.com"/>
-                <input type="password" name="" id="" placeholder="password"/>
+                <input type="email"  placeholder="your@email.com"/>
+                <input type="password"  placeholder="password"/>
                 <button className="primary">Login</button>
                 <div className="text-center py-2 text-gray-500">
                     Don't have an account yet? 
