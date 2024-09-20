@@ -9,7 +9,7 @@ export default function RegisterPage() {
 
     function registerUser(ev) {
         ev.preventDefault();
-        console.log('Form submitted'); // Debug log
+        // console.log('Form submitted'); // Debug log
         axios.get('http://localhost:4000/test')
         .then(response => {
             console.log('Response:', response.data); // Handle successful response
