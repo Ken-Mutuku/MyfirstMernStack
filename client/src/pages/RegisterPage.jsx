@@ -10,13 +10,14 @@ export default function RegisterPage() {
     function registerUser(ev) {
         ev.preventDefault();
         console.log('Form submitted'); // Debug log
-        axios.get('http://localhost:4000/test');
-        //     .then(response => {
-        //         console.log('Response:', response.data);
-        //     })
-        //     .catch(error => {
-        //         console.error('There was an error!', error);
-        //     });
+        axios.get('http://localhost:4000/test')
+        .then(response => {
+            console.log('Response:', response.data); // Handle successful response
+        })
+        .catch(error => {
+            console.error('There was an error!', error); // Handle errors
+        });
+    
     }
 
     return (
