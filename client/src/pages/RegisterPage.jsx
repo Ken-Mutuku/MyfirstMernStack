@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+
 export default function RegisterPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -9,14 +10,28 @@ export default function RegisterPage() {
 
     function registerUser(ev) {
         ev.preventDefault();
-        // console.log('Form submitted'); // Debug log
-        axios.get('http://localhost:4000/test')
+        // console.log('request submitted'); // Debug log
+
+        // axios.get('test')
+        // .then(response => {
+        //     console.log('Response:', response.data); // Handle successful response
+        // })
+        // .catch(error => {
+        //     console.error('There was an error!', error); // Handle errors
+        // }); //# commented because we are using the function for posting instead of getting and would result in an error
+    
+         axios.post('/register', {
+            name,
+            email,
+            password,
+        })
         .then(response => {
             console.log('Response:', response.data); // Handle successful response
         })
         .catch(error => {
             console.error('There was an error!', error); // Handle errors
         });
+        //works well
     
     }
 
