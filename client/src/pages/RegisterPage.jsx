@@ -12,7 +12,7 @@ export default function RegisterPage() {
         ev.preventDefault();
         // console.log('request submitted'); // Debug log
 
-        // axios.get('test')
+        // axios.get('/test')
         // .then(response => {
         //     console.log('Response:', response.data); // Handle successful response
         // })
