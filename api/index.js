@@ -1,6 +1,12 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const { default: mongoose } = require('mongoose');
+const bcrypt = require('bcryptjs');
+const User = require('./models/user');
+require('dotenv').config();
+
+const bcryptSalt = bcrypt.genSalt(10);
 
 app.use(express.json());
 app.use(cors({
@@ -8,13 +14,20 @@ app.use(cors({
     origin: 'http://localhost:5173'
 }));
 
-
+mongoose.connect(process.env.MONGO_URL);
 app.get('/test', (req,res)=>{
     res.json('test okay alright successful');
 });
+// patkenmtuku
+// isdXEHXvCWaaGhK7
 
 app.post('/register', (req, res) => {
     const {name,email,password}= req.body;
+    await User.create({
+        name,
+        email,
+        password: bcrypt.hashSync(password, bcryptSalt),
+    })
     res.json({name,email,password});
 });
 app.listen(4000, () => {
